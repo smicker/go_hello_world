@@ -12,7 +12,30 @@ Källa: https://stackoverflow.com/questions/41566495/golang-how-to-cross-compile
 Om du bara vill testköra det så skriver du  
 ```go run main.go```
 
+# Good GO knowledge
+- You can only have one package per directory.
+- 
+
+# Testing
+- Test cases must start with Test*
+- Files with tests must be named *_test.go
+- The test function takes one argument only t *testing.T
+- In order to use the *testing.T type, you need to import "testing"
+- To use helper function in your test code but tell go tester to instead error on the line calling the helper function, add the call ```t.Helper()``` in your helper function and let the helper function take the argument (t testing.TB) instead of (t  *testing.T).
+
+# GO Docs
+Du kan få dokumentationen för GO localt med hjälp av godoc.
+Installera godoc med:
+```go install golang.org/x/tools/cmd/godoc@latest```
+godoc executable hamnar i $HOME/go/bin så se till att du har följande rad i .zshrc (eller .bashrc) för att kunna köra godoc efter installationen:
+```export PATH=/usr/local/go/bin:$HOME/go/bin:$PATH```
+Starta godoc med:
+```godoc -http :8000```
+Se doc genom browsern på url:
+http://localhost:8000/pkg
+
 # Andra källor
 https://www.youtube.com/watch?v=1MXIGYrMk80  
 https://sv.wikipedia.org/wiki/Go_(programspr%C3%A5k)
+https://quii.gitbook.io/learn-go-with-tests/go-fundamentals/hello-world
 
