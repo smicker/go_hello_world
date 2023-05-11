@@ -14,6 +14,8 @@ Om du bara vill testköra det så skriver du
 
 # Good GO knowledge
 - You can only have one package per directory.
+- The name of the package should match the name of the directory, except for main.
+- Package names should be all lower case.
 - 
 
 # Testing
@@ -22,6 +24,19 @@ Om du bara vill testköra det så skriver du
 - The test function takes one argument only t *testing.T
 - In order to use the *testing.T type, you need to import "testing"
 - To use helper function in your test code but tell go tester to instead error on the line calling the helper function, add the call ```t.Helper()``` in your helper function and let the helper function take the argument (t testing.TB) instead of (t  *testing.T).
+
+# Benchmarking
+För att mäta genomsnittliga tiden det tar att köra en funktion så använder du benchmarking. Benchmarkingfunktioner skrivs i samma filer som testning.
+T.ex för att testa din funktion "MyFunctionToTest".
+```
+func BenchmarkRepeat(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		MyFunctionToTest("a")
+	}
+}
+```
+Starta benchmark med ```go test -bench=.```
+
 
 # GO Docs
 Du kan få dokumentationen för GO localt med hjälp av godoc.
