@@ -2,7 +2,7 @@
 Programmet startar en web-server med en sida där den skriver ut "Hello World". Starta programmet och surfa till localhost:8080 för att se resultatet.  
 
 # Install go
-Download from here: https://go.dev/dl/
+Download from here: https://go.dev/dl/  
 Follow instructions here: https://go.dev/doc/install
 
 
